@@ -5,10 +5,11 @@ using namespace std;
 int main(){
     arreglo_dinamico<string> arreglo;
 
-    for(int i = 0; i < 100; i++){
+    for(int i = 0; i < 5; i++){
         arreglo.insertar_final("a");
     }
-    for (size_t i = 0; i < 100; i++){
+    arreglo.insertar("b", 2);
+    for (size_t i = 0; i < 5; i++){
         cout << arreglo[i] << " ";
     }
     cout <<endl;

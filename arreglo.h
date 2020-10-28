@@ -17,6 +17,7 @@ class arreglo_dinamico{
     ~arreglo_dinamico();
     void insertar_final(const T& s);
     void insertar_inicio(const T& s);
+    void insertar(const T& s, size_t p);
     size_t size();
     string operator[](size_t p){
         return arreglo[p];
@@ -53,6 +54,21 @@ void arreglo_dinamico<T>::insertar_inicio(const T& s){
         arreglo[i] = arreglo[i-1];
     }
     arreglo[0] = s;
+    cont++;
+}
+
+template <class T>
+void arreglo_dinamico<T>::insertar(const T& s, size_t p){
+    if (p >= cont){
+        cout << "posicion invalida"<<endl;
+    }
+    if (cont == tam){
+        expandir();         
+    }
+    for (size_t i = cont; i > p; i--){
+        arreglo[i] = arreglo[i-1];
+    }
+    arreglo[p] = s;
     cont++;
 }
 
